@@ -13,8 +13,13 @@
     "@cornerstonejs/core": "^1.72.0",
     "@cornerstonejs/streaming-image-volume-loader": "^1.72.0",
     "@cornerstonejs/tools": "^1.72.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "sort-by": "^1.2.0",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
