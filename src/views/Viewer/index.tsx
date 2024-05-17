@@ -1,29 +1,49 @@
 import { Button } from '@/components/ui/button';
-import { User, Bell, Settings, Import, Camera, Text, Info } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { User, Bell, Import, Camera, Text, Info } from 'lucide-react';
 
 export default function Viewer() {
   return (
     <div key="1" className="flex flex-col h-screen">
-      <header className="flex items-center justify-between h-14 px-4 border-b border-gray-700 w-full">
+      <header className="flex items-center justify-between h-12 px-4 border-b border-gray-700 w-full">
         <div className="text-white">Login & Title</div>
         <div className="flex space-x-2">
-          <Button className="text-white" variant="ghost">
+          <Button size="icon" variant="ghost">
             <Import />
+            <span className="sr-only">Import</span>
           </Button>
-          <Button className="text-white" variant="ghost">
+          <Button size="icon" variant="ghost">
             <Camera />
           </Button>
         </div>
         <div className="flex items-center space-x-2">
-          <Button className="text-white" variant="ghost">
+          <Button size="icon" variant="ghost">
             <Bell />
+            <span className="sr-only">Messages</span>
           </Button>
-          <Button className="text-white" variant="ghost">
-            <User />
-          </Button>
-          <Button className="text-white" variant="ghost">
-            <Settings />
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <User />
+                <span className="sr-only">Toggle user menu</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
       <main className="flex-1 flex">
