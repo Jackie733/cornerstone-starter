@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { User, Bell, Import, Camera, Text, Info } from 'lucide-react';
+import { loadUserPromptedFile } from '@/actions/loadUserFiles';
 
 export default function Viewer() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Viewer() {
       <header className="flex items-center justify-between h-12 px-4 border-b border-gray-700 w-full">
         <div className="text-white">Login & Title</div>
         <div className="flex space-x-2">
-          <Button size="icon" variant="ghost">
+          <Button size="icon" variant="ghost" onClick={loadUserPromptedFile}>
             <Import />
             <span className="sr-only">Import</span>
           </Button>
