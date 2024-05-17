@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import { ThemeProvider } from '@/components/theme-provider';
-import StudyList from './views/StudyList';
+// import StudyList from './views/StudyList';
 import Viewer from './views/Viewer';
 import Login from './views/Login';
 import './index.css';
@@ -10,7 +14,8 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <StudyList />,
+    // element: <StudyList />,
+    element: <Navigate to="/viewer" replace />,
   },
   {
     path: '/login',
