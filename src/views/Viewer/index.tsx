@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,6 +11,12 @@ import {
 import { User, Bell, Import, Camera, Text, Info } from 'lucide-react';
 
 export default function Viewer() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   return (
     <div key="1" className="flex flex-col h-screen">
       <header className="flex items-center justify-between h-12 px-4 border-b border-gray-700 w-full">
@@ -41,7 +48,7 @@ export default function Viewer() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

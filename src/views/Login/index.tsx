@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -10,6 +11,12 @@ import {
 } from '@/components/ui/card';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/viewer');
+  };
+
   return (
     <div className="w-full h-full lg:grid lg:grid-cols-2">
       <div className="hidden bg-gray-100 lg:block dark:bg-gray-800">
@@ -56,7 +63,7 @@ export default function Login() {
                 </div>
                 <Input id="password" type="password" required />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" onClick={handleLogin}>
                 Login
               </Button>
               <Button variant="outline" className="w-full">
