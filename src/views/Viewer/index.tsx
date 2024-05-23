@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +14,7 @@ import { loadUserPromptedFile } from '@/actions/loadUserFiles';
 
 export default function Viewer() {
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleLogout = () => {
     navigate('/login');
@@ -32,7 +34,16 @@ export default function Viewer() {
           </Button>
         </div>
         <div className="flex items-center space-x-2">
-          <Button size="icon" variant="ghost">
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => {
+              toast({
+                title: 'Test',
+                description: 'Hello world',
+              });
+            }}
+          >
             <Bell />
             <span className="sr-only">Messages</span>
           </Button>

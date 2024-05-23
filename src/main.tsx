@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
 // import StudyList from './views/StudyList';
 import Viewer from './views/Viewer';
 import Login from './views/Login';
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="relative overflow-hidden h-screen w-screen">
         <RouterProvider router={router} />
+        <Toaster />
       </div>
     </ThemeProvider>
   </React.StrictMode>
