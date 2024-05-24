@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { User, Bell, Import, Camera, Text, Info } from 'lucide-react';
 import { loadUserPromptedFile } from '@/actions/loadUserFiles';
+import UploadCTData from '@/components/UploadCTData';
 
 export default function Viewer() {
   const navigate = useNavigate();
@@ -82,7 +83,9 @@ export default function Viewer() {
             </Button>
           </div>
         </aside>
-        <div className="flex-1 flex justify-center items-center"></div>
+        <div className="flex-1 flex justify-center items-center">
+          <UploadCTData />
+        </div>
       </main>
     </div>
   );
